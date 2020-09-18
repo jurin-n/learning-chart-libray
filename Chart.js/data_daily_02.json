@@ -1,0 +1,30 @@
+{
+    "menuId": "ID001",
+    "unit": "回",
+    "logs": [
+        {
+            "dateTimeOfImplementation": "2020-09-13T00:00:00+09:00",
+            "valueOfUnit": 60
+        },
+        {
+            "dateTimeOfImplementation": "2020-09-14T00:00:00+09:00",
+            "valueOfUnit": 10
+        },
+        {
+            "dateTimeOfImplementation": "2020-09-16T00:00:00+09:00",
+            "valueOfUnit": 10
+        },
+        {
+            "dateTimeOfImplementation": "2020-09-17T00:00:00+09:00",
+            "valueOfUnit": 120
+        },
+        {
+            "dateTimeOfImplementation": "2020-09-18T00:00:00+09:00",
+            "valueOfUnit": 10
+        },
+        {
+            "dateTimeOfImplementation": "2020-09-19T00:00:00+09:00",
+            "valueOfUnit": 100
+        }
+    ]
+}

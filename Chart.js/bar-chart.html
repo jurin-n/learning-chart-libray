@@ -31,14 +31,14 @@
             </main>
         </div>
         <script>
-            function drawGraph(labels, data){
+            function drawGraph(label, labels, data){
                 var ctx = document.getElementById('myChart').getContext('2d');
                 var myChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: '練習時間',
+                            label: label,
                             data: data,
                             backgroundColor: 'rgba(255, 159, 64, 0.2)',
                             borderColor: 'rgba(255, 159, 64, 1)',
@@ -58,13 +58,23 @@
             };
             $(function(){
                 $.ajax({
-                    url: "data_daily.json",
+                    url: "data_daily_02.json",
                     success: function(result){
-                        console.log(result['labels']);
-                        console.log(result['data']);
+                        //console.log(result['menuId']);
+                        //console.log(result['unit']);
+                        //console.log(result['logs']);
+                        const label = result['unit']=='回' ? "練習回数" : "練習時間";
+                        var labels = [];
+                        var data = []
+                        for(let log of result['logs'])
+                        {
+                            labels.push(log['dateTimeOfImplementation'].slice(0,10));
+                            data.push(log['valueOfUnit']);
+                        }
                         drawGraph(
-                            result['labels'],
-                            result['data']
+                            label,
+                            labels,
+                            data
                         );
                     }
                 });
